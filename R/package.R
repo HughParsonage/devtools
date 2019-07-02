@@ -35,7 +35,7 @@ package_file <- function(..., path = ".") {
   if (!is.character(path) || length(path) != 1) {
     stop("`path` must be a string.", call. = FALSE)
   }
-  path <- strip_slashes(normalizePath(path, mustWork = FALSE))
+  path <- strip_slashes(normalizePath(path, mustWork = FALSE, winslash = "/"))
 
   if (!file.exists(path)) {
     stop("Can't find '", path, "'.", call. = FALSE)
